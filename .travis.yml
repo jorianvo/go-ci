@@ -1,0 +1,15 @@
+language: minimal
+
+services:
+  - docker
+
+install: true
+
+script:
+  - bash ci.sh build
+
+deploy:
+  provider: script
+  script: bash ci.sh push
+  on:
+    branch: master
